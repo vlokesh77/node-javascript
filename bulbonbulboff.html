@@ -1,0 +1,35 @@
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Light Bulb</title>
+</head>
+
+<body>
+
+    <h2>What Can JavaScript Do?</h2>
+
+    <p>JavaScript can change HTML attribute values.</p>
+
+    <p>
+        In this case JavaScript changes the value of the
+        <code>src</code> (source) attribute of an image.
+    </p>
+
+    <!-- Turn on button -->
+    <button onclick="document.getElementById('myImage').src='bulb on.jpg'">
+        Turn on the light
+    </button>
+
+    <!-- Light bulb image -->
+    <img id="myImage" src="bulboff.jpg" style="width:100px">
+
+    <!-- Turn off button -->
+    <button onclick="document.getElementById('myImage').src='bulb off.jpg'">
+        Turn off the light
+    </button>
+
+</body>
+
+</html>

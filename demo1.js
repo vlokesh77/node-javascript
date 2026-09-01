@@ -1,0 +1,1 @@
+<button onClick={() => alert('Button clicked!')}>Click Me</button>  
