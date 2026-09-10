@@ -1,0 +1,8 @@
+const students = {
+    name: "John Doe",
+    address: {
+        street: "123 Main St",
+        city: "Anytown",
+        state: "CA"
+    }
+}

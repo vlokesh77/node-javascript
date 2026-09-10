@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data Management</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Student Data Entry</h1>
+
+    <form id="studentForm">
+
+        <!-- Text appears inside the box -->
+        <input type="text" id="studentName" placeholder="Student Name" required>
+
+        <input type="number" id="studentAge" placeholder="Age" required>
+
+        <input type="text" id="studentGrade" placeholder="Grade" required>
+
+        <button type="submit">Add Student</button>
+
+    </form>
+
+    <h2>Student List</h2>
+
+    <table id="studentTable">
+
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- Student data will be inserted here -->
+        </tbody>
+
+    </table>
+
+
+    <script>
+
+        document.getElementById("studentForm").addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            // Get values from input boxes
+            const studentName = document.getElementById("studentName").value;
+            const studentAge = document.getElementById("studentAge").value;
+            const studentGrade = document.getElementById("studentGrade").value;
+
+            // Check if all fields are filled
+            if (studentName && studentAge && studentGrade) {
+
+                // Get table body
+                const tableBody = document.querySelector("#studentTable tbody");
+
+                // Create a new row
+                const newRow = tableBody.insertRow();
+
+                // Create cells
+                const nameCell = newRow.insertCell(0);
+                const ageCell = newRow.insertCell(1);
+                const gradeCell = newRow.insertCell(2);
+
+                // Insert student data
+                nameCell.textContent = studentName;
+                ageCell.textContent = studentAge;
+                gradeCell.textContent = studentGrade;
+
+                // Clear input boxes
+                document.getElementById("studentName").value = "";
+                document.getElementById("studentAge").value = "";
+                document.getElementById("studentGrade").value = "";
+
+            } else {
+
+                alert("Please fill in all fields.");
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
